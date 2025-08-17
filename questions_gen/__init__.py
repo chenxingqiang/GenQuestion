@@ -6,7 +6,7 @@ An advanced package for generating high-quality mathematical competition problem
 using fine-tuned language models with reinforcement learning optimization.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 __author__ = "xingqiang"
 __email__ = "your.email@turingai.cc"
 

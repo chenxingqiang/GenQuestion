@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "questions-gen"
-version = "0.1.0"
+version = "0.1.1"
 description = "AI-Powered Mathematical Competition Problem Generation Package"
 readme = "README.md"
 license = "Apache-2.0"
