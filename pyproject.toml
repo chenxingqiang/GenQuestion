@@ -1,0 +1,133 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "questions-gen"
+version = "0.1.0"
+description = "AI-Powered Mathematical Competition Problem Generation Package"
+readme = "README.md"
+license = "Apache-2.0"
+authors = [
+    {name = "Xingqiang Chen", email = "xingqiangchen@turingai.cc"}
+]
+maintainers = [
+    {name = "Xingqiang Chen", email = "xingqiangchen@turingai.cc"}
+]
+keywords = [
+    "artificial intelligence",
+    "machine learning", 
+    "natural language processing",
+    "mathematical problem generation",
+    "education technology",
+    "competition mathematics",
+    "language model",
+    "fine-tuning",
+    "reinforcement learning",
+    "knowledge distillation"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Education",
+    "Topic :: Text Processing :: Linguistic"
+]
+requires-python = ">=3.8"
+dependencies = [
+    "torch>=2.0.0",
+    "transformers>=4.35.0",
+    "unsloth[colab-new]>=2024.1",
+    "datasets>=2.14.0",
+    "trl>=0.7.0",
+    "scikit-learn>=1.3.0",
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+    "openai>=1.0.0",
+    "huggingface_hub>=0.17.0",
+    "accelerate>=0.24.0",
+    "bitsandbytes>=0.41.0",
+    "peft>=0.6.0",
+    "xformers>=0.0.22"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0", 
+    "black>=22.0.0",
+    "flake8>=4.0.0",
+    "isort>=5.0.0",
+    "mypy>=0.950"
+]
+full = [
+    "jupyter>=1.0.0",
+    "matplotlib>=3.5.0",
+    "seaborn>=0.11.0",
+    "plotly>=5.0.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/xingqiang/questions-gen"
+Repository = "https://github.com/xingqiang/questions-gen"
+Documentation = "https://github.com/xingqiang/questions-gen/wiki"
+"Bug Reports" = "https://github.com/xingqiang/questions-gen/issues"
+"Models" = "https://huggingface.co/xingqiang"
+
+[project.scripts]
+questions-gen = "questions_gen.cli.main_cli:main"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["questions_gen*"]
+exclude = ["tests*"]
+
+[tool.setuptools.package-data]
+questions_gen = ["data/*.json", "templates/*.txt"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38', 'py39', 'py310', 'py311']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+addopts = "-v --cov=questions_gen --cov-report=html --cov-report=term-missing"
