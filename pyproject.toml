@@ -75,10 +75,10 @@ full = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/xingqiang/questions-gen"
-Repository = "https://github.com/xingqiang/questions-gen"
-Documentation = "https://github.com/xingqiang/questions-gen/wiki"
-"Bug Reports" = "https://github.com/xingqiang/questions-gen/issues"
+Homepage = "https://github.com/chenxingqiang/GenQuestion"
+Repository = "https://github.com/chenxingqiang/GenQuestion"
+Documentation = "https://github.com/chenxingqiang/GenQuestion/wiki"
+"Bug Reports" = "https://github.com/chenxingqiang/GenQuestion/issues"
 "Models" = "https://huggingface.co/xingqiang"
 
 [project.scripts]

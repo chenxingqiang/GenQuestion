@@ -8,7 +8,7 @@ using fine-tuned language models with reinforcement learning optimization.
 
 __version__ = "0.1.1"
 __author__ = "xingqiang"
-__email__ = "your.email@turingai.cc"
+__email__ = "chenxingqiang@turingai.cc"
 
 # Core components - lazy loading to avoid import issues
 def _lazy_import():
